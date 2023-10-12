@@ -49,5 +49,16 @@ namespace hw_2023_10_07
                 comboBox1.Items.Add(dt.TableName);
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = ds.Tables[comboBox1.Text];
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
