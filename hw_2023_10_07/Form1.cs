@@ -18,7 +18,7 @@ namespace hw_2023_10_07
         SqlConnection conn = null;
         SqlDataAdapter adapter = null;
         DataSet ds = null;
-        SqlCommandBuilder cmdBuilder = null;
+        //SqlCommandBuilder cmdBuilder = null;
         string cs = "";
         public Form1()
         {
@@ -36,7 +36,7 @@ namespace hw_2023_10_07
                               "SELECT * FROM Sales";
 
             adapter = new SqlDataAdapter(strQuery, conn);
-            cmdBuilder = new SqlCommandBuilder(adapter);
+            //cmdBuilder = new SqlCommandBuilder(adapter);
 
             ds = new DataSet();
             adapter.TableMappings.Add("Table", "Buyers");
@@ -54,11 +54,6 @@ namespace hw_2023_10_07
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ds.Tables[comboBox1.Text];
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
